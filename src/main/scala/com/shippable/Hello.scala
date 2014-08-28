@@ -10,7 +10,7 @@ import scala.concurrent.{Await, Future}
 class HelloWorld {
    def returnValue(): String= {
 
-   val configuration = URLParser.parse("jdbc:postgresql://localhost:5432/test?user=postgres")
+   val configuration = URLParser.parse("jdbc:postgresql://localhost:5432/test?user=postgres&password=")
    val connection: Connection = new PostgreSQLConnection(configuration)
    var finalResult = ""
 
