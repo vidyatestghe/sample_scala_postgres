@@ -21,7 +21,7 @@ class HelloWorld {
    val mapResult: Future[Any] = future.map(queryResult => queryResult.rows match {
       case Some(resultSet) => {
          val row : RowData = resultSet.head
-         finalResult = row(2).toString
+         finalResult = row(1).toString
       }
       case None => -1
    }
