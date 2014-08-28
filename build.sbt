@@ -21,7 +21,7 @@ testOptions in Test <+= (target in Test) map {
 
 instrumentSettings
 
-ScoverageKeys.minimumCoverage := 70
+ScoverageKeys.minimumCoverage := 60
 
 ScoverageKeys.failOnMinimumCoverage := false
 
