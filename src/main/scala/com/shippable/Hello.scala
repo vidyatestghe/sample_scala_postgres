@@ -10,7 +10,7 @@ import scala.concurrent.{Await, Future}
 class HelloWorld {
    def returnValue(): String= {
 
-   val configuration = URLParser.parse("jdbc:postgresql://localhost:5233/test?user=postgres")
+   val configuration = URLParser.parse("jdbc:postgresql://localhost:5432/test?user=postgres&password=")
    val connection: Connection = new PostgreSQLConnection(configuration)
    var finalResult = ""
 
@@ -21,7 +21,7 @@ class HelloWorld {
    val mapResult: Future[Any] = future.map(queryResult => queryResult.rows match {
       case Some(resultSet) => {
          val row : RowData = resultSet.head
-         finalResult = row(2).toString
+         finalResult = row(1).toString
       }
       case None => -1
    }
